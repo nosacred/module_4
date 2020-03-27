@@ -6,7 +6,7 @@ import kotlin.random.nextInt
 class Team (
     teamCount:Int
 ) {
-    val teamList = mutableListOf<Warrior>()
+    val teamList = mutableListOf<AbstractWarrior>()
 
     init {
         if (teamCount > 0) {
@@ -16,7 +16,7 @@ class Team (
         }
     }
 
-   private fun rndWarrior( rank : Int): Warrior {
+   private fun rndWarrior( rank : Int): AbstractWarrior {
         return  when (rank) {
             1-> Corporal()
             2-> Seargeant()

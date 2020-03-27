@@ -45,7 +45,7 @@ abstract class AbstractWarrior(
         this.weapon.reload()
     }
 
-    private var currentHealth:Int = this.maxHealth
+    var currentHealth:Int = this.maxHealth
 
     override var isKilled: Boolean = false
 
@@ -53,7 +53,8 @@ abstract class AbstractWarrior(
         var dmg = 0
         for(shot in 1..this.weapon.FireType.shotQuantity){
             if (this.weapon.isBulletIn){
-                if(Random.nextInt(0..this.accuraty) >= Random.nextInt(0..enemy.evaisionChance))
+                if(Random.nextInt(0..this.accuraty) >=
+                    Random.nextInt(0..enemy.evaisionChance))
                    dmg+= this.weapon.takeBulletForShot()
             }
         }
@@ -70,7 +71,8 @@ abstract class AbstractWarrior(
     }
 
     override fun toString(): String {
-        return ("Здоровье = $currentHealth ,Ранк =  $rank, Шанс уворота = $evaisionChance, Точность = $accuraty")
+        return ("Здоровье = $currentHealth ,Ранк =  $rank, Шанс уворота = $evaisionChance," +
+                " Точность = $accuraty")
     }
 
 
